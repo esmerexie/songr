@@ -23,9 +23,10 @@ public class HelloController {
 
     @GetMapping("/albums")
     public String albums(Model m){
-        Album[] albums = Album.testingAlbums();
-        m.addAttribute("albumsCollection", albums);
-        return "albums";
+//        Album[] albums = Album.testingAlbums();
+//        m.addAttribute("albumsCollection", albums);
+//        return "albums";
+        return "";
     }
 
 }
