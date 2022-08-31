@@ -1,6 +1,7 @@
 package com.rexie.songr.controllers;
 
 
+import com.rexie.songr.Album;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,10 +24,9 @@ public class HelloController {
 
     @GetMapping("/albums")
     public String albums(Model m){
-//        Album[] albums = Album.testingAlbums();
-//        m.addAttribute("albumsCollection", albums);
-//        return "albums";
-        return "";
+        Album[] albums = Album.testingAlbums();
+        m.addAttribute("albumsCollection", albums);
+        return "albums";
     }
 
 }
