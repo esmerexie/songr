@@ -4,24 +4,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.io.Serializable;
 
 @Entity
-public class Album implements Serializable {
+public class Album {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
     private String title;
-    private String artist;
-    private int songCount;
-    private int length;
+    private String name;
+    private Integer songCount;
+    private Integer length;
     private  String artistPicUrl;
 
-    public Album(String title, String artist, int songCount, int length, String artistPicUrl) {
+    protected Album() {
+    }
+
+    public Album(String title, String artist, Integer songCount, Integer length, String artistPicUrl) {
         this.title = title;
-        this.artist = artist;
+        this.name = artist;
         this.songCount = songCount;
         this.length = length;
         this.artistPicUrl = artistPicUrl;
@@ -45,18 +47,18 @@ public class Album implements Serializable {
     }
 
     public String getArtist() {
-        return artist;
+        return name;
     }
 
     public void setArtist(String artist) {
-        this.artist = artist;
+        this.name = artist;
     }
 
     public int getSongCount() {
         return songCount;
     }
 
-    public void setSongCount(int songCount) {
+    public void setSongCount(Integer songCount) {
         this.songCount = songCount;
     }
 
@@ -64,7 +66,7 @@ public class Album implements Serializable {
         return length;
     }
 
-    public void setLength(int length) {
+    public void setLength(Integer length) {
         this.length = length;
     }
 

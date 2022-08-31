@@ -2,12 +2,19 @@ package com.rexie.songr.controllers;
 
 
 import com.rexie.songr.Album;
+import com.rexie.songr.SongrApplication;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class HelloController {
+
+    @Autowired
+    SongrApplication SongrApplication;
 
     @GetMapping("/hello")
     public String getHi(){
