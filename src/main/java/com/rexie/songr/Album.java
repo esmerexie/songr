@@ -1,14 +1,23 @@
-import java.net.URL;
+package com.rexie.songr;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
-import java.util.ArrayList;
 
-
+@Entity
 public class Album implements Serializable {
-    public String title;
-    public String artist;
-    public int songCount;
-    public int length;
-    public String artistPicUrl;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
+
+    private String title;
+    private String artist;
+    private int songCount;
+    private int length;
+    private  String artistPicUrl;
 
     public Album(String title, String artist, int songCount, int length, String artistPicUrl) {
         this.title = title;
